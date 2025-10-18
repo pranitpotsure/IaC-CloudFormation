@@ -62,12 +62,7 @@ S3BucketName	Name of the created S3 bucket
 You can add a UserData script to install Apache and display a webpage automatically:
 
 UserData:
-  Fn::Base64: |
-    #!/bin/bash
-    yum install -y httpd
-    systemctl start httpd
-    systemctl enable httpd
-    echo "Hello from Pranit’s EC2 via CloudFormation!" > /var/www/html/index.html
+  Prefer - user.yaml
 
 Then open your EC2 Public IP in a browser to see your custom message!
 
