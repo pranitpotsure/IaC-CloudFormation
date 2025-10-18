@@ -1,0 +1,7 @@
+UserData:
+  Fn::Base64: |
+    #!/bin/bash
+    yum install -y httpd
+    systemctl start httpd
+    systemctl enable httpd
+    echo "Hello from Pranit’s EC2 via CloudFormation!" > /var/www/html/index.html
