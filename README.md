@@ -68,7 +68,7 @@ UserData:
     systemctl start httpd
     systemctl enable httpd
     echo "Hello from Pranit’s EC2 via CloudFormation!" > /var/www/html/index.html
-Add the above under Properties of MyEC2Instance.
+
 Then open your EC2 Public IP in a browser to see your custom message!
 
 🧹 Cleanup
