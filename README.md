@@ -73,6 +73,9 @@ To avoid being charged:
  - Click Delete
  - This will automatically delete EC2, S3, and all related resources.
 
+![Alt text](5.png)
+
+
 ### 🧾 Author
 👤 Pranit Potsure
 Cloud Enthusiast | Learning AWS & DevOps
