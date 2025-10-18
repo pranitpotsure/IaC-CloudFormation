@@ -1,0 +1,56 @@
+
+---
+
+## ⚙️ CloudFormation Template (YAML)
+
+Here’s the complete working YAML file with your specific details:
+
+```yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create EC2 instance, S3 bucket, and Security Group (Pranit IaC Project)
+
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: pranit-bucket-for-iac
+
+  MySecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow SSH and HTTP
+      VpcId: vpc-0183aca2877069a0c
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-06fa3f12191aa3337
+      InstanceType: t2.micro
+      KeyName: your_key
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: true
+          DeviceIndex: 0
+          SubnetId: subnet-0042b64fa51f945f4
+          GroupSet:
+            - !Ref MySecurityGroup
+      Tags:
+        - Key: Name
+          Value: Pranit-EC2-IaC
+
+Outputs:
+  EC2PublicIP:
+    Description: Public IP of the EC2 instance
+    Value: !GetAtt MyEC2Instance.PublicIp
+
+  S3BucketName:
+    Description: S3 bucket created
+    Value: !Ref MyS3Bucket
