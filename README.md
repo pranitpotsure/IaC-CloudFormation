@@ -30,7 +30,7 @@ IaC-CloudFormation/
 ├── template.yaml # CloudFormation YAML template
 └── README.md # Project documentation
 
-##🚀 Deployment Steps
+### 🚀 Deployment Steps
 1.Login to AWS Console
  - Open AWS CloudFormation Console
 2.Create a Stack
@@ -43,13 +43,13 @@ IaC-CloudFormation/
 5.Click Next → Next → Create Stack
 6.Wait for “CREATE_COMPLETE”
 
-##✅ Expected Outputs
+### ✅ Expected Outputs
 After successful creation, you’ll see these outputs in the CloudFormation console:
 Output	Description
 EC2PublicIP	Public IP of the created EC2 instance
 S3BucketName	Name of the created S3 bucket
 
-##🧠 How It Works
+### 🧠 How It Works
 1.CloudFormation reads template.yaml.
 2.It provisions:
  - an S3 bucket (pranit-bucket-for-iac)
@@ -58,22 +58,22 @@ S3BucketName	Name of the created S3 bucket
 3.The EC2 instance automatically receives a Public IP.
 4.CloudFormation displays outputs — you can use the Public IP to SSH or access the instance.
 
-##🖥️ Optional Enhancement
+### 🖥️ Optional Enhancement
 You can add a UserData script to install Apache and display a webpage automatically:
 
-##UserData:
+### UserData:
   Prefer - user.yaml
 
 Then open your EC2 Public IP in a browser to see your custom message!
 
-##🧹 Cleanup
+### 🧹 Cleanup
 To avoid being charged:
  - Go to CloudFormation Console
  - Select your stack
  - Click Delete
  - This will automatically delete EC2, S3, and all related resources.
 
-##🧾 Author
+### 🧾 Author
 👤 Pranit Potsure
 Cloud Enthusiast | Learning AWS & DevOps
 📅 Created on: October 2025
